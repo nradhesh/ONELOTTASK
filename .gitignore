@@ -1,0 +1,41 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env
+.env.*
+*.env
+
+# Playwright/Browser data
+playwright-report/
+playwright/.cache/
+**/user-data-dir/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Test/coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Logs
+*.log
+
+# Cache
+*.cache/
+
+# Cookies/private data
+cookies.json
