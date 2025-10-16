@@ -18,10 +18,14 @@ A small end-to-end backend service that scrapes car listings from Facebook Marke
 - Web Server (FastAPI):
   - Health: `GET /health`.
   - Trigger scrape: `POST /scrape`.
-  - List: `GET /listings` with pagination and filters.
+  - List: `GET /listings` with pagination and filtes.
   - Get one: `GET /listings/{listing_id}`.
   - Update: `PATCH /listings/{listing_id}`.
   - Delete: `DELETE /listings/{listing_id}`.
+##Screenshots
+<img width="1915" height="489" alt="image" src="https://github.com/user-attachments/assets/77769794-8f93-424b-9a88-e557c97d1ebd" />
+### Web Routes tesing via Postman
+<img width="1503" height="872" alt="image" src="https://github.com/user-attachments/assets/fee17aeb-2e8e-4983-83b3-612e8bf66c1e" />
 
 ## Project Layout
 
