@@ -84,12 +84,12 @@ Notes:
 
 Windows PowerShell:
 ```
-C:\Users\HP\OneDrive\Desktop\projects\OnelotTask\venv\Scripts\playwright.exe install chromium
+{your path}\venv\Scripts\playwright.exe install chromium
 ```
 
 2) Run the API server (using venv):
 ```
-C:\Users\HP\OneDrive\Desktop\projects\OnelotTask\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8001
+{your path}\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8001
 ```
 
 3) Health check:
@@ -97,6 +97,42 @@ C:\Users\HP\OneDrive\Desktop\projects\OnelotTask\venv\Scripts\python.exe -m uvic
 curl http://127.0.0.1:8001/health
 # {"status":"ok"}
 ```
+
+## How to Run the Project
+
+- Activate the venv (if not already):
+  - PowerShell:
+    ```powershell
+    {your path}\venv\Scripts\Activate.ps1
+    ```
+
+- Ensure `.env` is populated (see above). Optional: place `cookies.json` at project root if scraping gated content.
+
+- Install Playwright browsers (one-time):
+  ```powershell
+  {your path}\venv\Scripts\playwright.exe install chromium
+  ```
+
+- Start the API:
+  ```powershell
+  {your path}\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8001
+  ```
+
+- Trigger a scrape (new terminal):
+  ```powershell
+  Invoke-WebRequest -UseBasicParsing -Method Post http://127.0.0.1:8001/scrape
+  ```
+
+- Verify data via API:
+  ```powershell
+  (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8001/listings?limit=10).Content | ConvertFrom-Json | Format-List
+  ```
+
+- Verify in Aiven Console (GUI): Query tab
+  ```sql
+  SELECT COUNT(*) FROM listings;
+  SELECT id, listing_id, title, price, year, mileage, location FROM listings ORDER BY id DESC LIMIT 10;
+  ```
 
 ## API Usage
 
@@ -107,7 +143,7 @@ Base URL: `http://127.0.0.1:8001`
   - Response: `{ "status": "ok" }`
 
 - List listings (filters optional)
-  - `GET /listings?skip=0&limit=50&min_price=400000&max_price=2000000&min_year=2018&location=Manila`
+  - `GET /listings?skip=0&limit=50&mingit _price=400000&max_price=2000000&min_year=2018&location=Manila`
   - Response: JSON array of listings
 
 - Get one
@@ -182,7 +218,7 @@ Indexes: `price`, `year` for basic range queries.
 
 - Python one-liner (no psql):
 ```
-C:\Users\HP\OneDrive\Desktop\projects\OnelotTask\venv\Scripts\python.exe - << 'PY'
+{your path}\venv\Scripts\python.exe - << 'PY'
 import os
 from sqlalchemy import create_engine, text
 url=os.getenv('POSTGRES_URL','').replace('postgres://','postgresql+psycopg2://',1)
