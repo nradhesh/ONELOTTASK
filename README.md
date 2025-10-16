@@ -26,6 +26,9 @@ A small end-to-end backend service that scrapes car listings from Facebook Marke
 <img width="1915" height="489" alt="image" src="https://github.com/user-attachments/assets/77769794-8f93-424b-9a88-e557c97d1ebd" />
 ### Web Routes tesing via Postman
 <img width="1503" height="872" alt="image" src="https://github.com/user-attachments/assets/fee17aeb-2e8e-4983-83b3-612e8bf66c1e" />
+### Request handling and rendering via server
+<img width="1244" height="533" alt="image" src="https://github.com/user-attachments/assets/1842f94f-0ed9-4905-83bd-156aeb65a666" />
+
 
 ## Project Layout
 
