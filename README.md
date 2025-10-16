@@ -89,12 +89,12 @@ Windows PowerShell:
 
 2) Run the API server (using venv):
 ```
-{your path}\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8001
+{your path}\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 ```
 
 3) Health check:
 ```
-curl http://127.0.0.1:8001/health
+curl http://127.0.0.1:8000/health
 # {"status":"ok"}
 ```
 
@@ -115,17 +115,17 @@ curl http://127.0.0.1:8001/health
 
 - Start the API:
   ```powershell
-  {your path}\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8001
+  {your path}\venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8000
   ```
 
 - Trigger a scrape (new terminal):
   ```powershell
-  Invoke-WebRequest -UseBasicParsing -Method Post http://127.0.0.1:8001/scrape
+  Invoke-WebRequest -UseBasicParsing -Method Post http://127.0.0.1:8000/scrape
   ```
 
 - Verify data via API:
   ```powershell
-  (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8001/listings?limit=10).Content | ConvertFrom-Json | Format-List
+  (Invoke-WebRequest -UseBasicParsing http://127.0.0.1:8000/listings?limit=10).Content | ConvertFrom-Json | Format-List
   ```
 
 - Verify in Aiven Console (GUI): Query tab
@@ -136,7 +136,7 @@ curl http://127.0.0.1:8001/health
 
 ## API Usage
 
-Base URL: `http://127.0.0.1:8001`
+Base URL: `http://127.0.0.1:8000`
 
 - Trigger scrape
   - `POST /scrape`
@@ -166,7 +166,7 @@ Base URL: `http://127.0.0.1:8001`
 
 ### Postman Quick Start
 
-- Base URL variable: `{{baseUrl}} = http://127.0.0.1:8001`
+- Base URL variable: `{{baseUrl}} = http://127.0.0.1:8000`
 - Add requests:
   - GET `{{baseUrl}}/health`
   - POST `{{baseUrl}}/scrape`
