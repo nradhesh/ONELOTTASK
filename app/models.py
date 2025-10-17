@@ -1,4 +1,9 @@
 # app/models.py
+"""SQLAlchemy ORM models for persisted entities.
+
+Currently defines the `Listing` model and related indexes. This documentation
+does not change runtime logic.
+"""
 from sqlalchemy import Column, Integer, Text, Numeric, TIMESTAMP, func, Index
 from sqlalchemy.dialects.postgresql import JSONB
 from .db import Base

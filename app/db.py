@@ -1,4 +1,9 @@
 # app/db.py
+"""Database engine and session utilities.
+
+Centralized SQLAlchemy engine creation and session dependency helper for FastAPI.
+This edit only adds documentation and is behavior-neutral.
+"""
 import os
 from dotenv import load_dotenv
 from sqlalchemy import create_engine

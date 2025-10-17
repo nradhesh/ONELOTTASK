@@ -1,4 +1,10 @@
 # app/crud.py
+"""CRUD operations for `Listing` entities.
+
+This module provides create, read, update, and delete helpers as well as
+an idempotent upsert utility. Edits here are documentation-only and do not
+affect runtime behavior.
+"""
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy import select, and_, func
 from .models import Listing

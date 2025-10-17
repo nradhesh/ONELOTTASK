@@ -1,4 +1,8 @@
 # app/utils.py
+"""Shared utilities such as logging and retry decorators.
+
+Module-level documentation added for clarity without impacting behavior.
+"""
 import os
 import logging
 import time

@@ -1,4 +1,9 @@
 # app/schemas.py
+"""Pydantic schemas used by the API layer.
+
+Data validation and serialization models for input/output. Documentation-only
+change for traceability.
+"""
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import datetime
